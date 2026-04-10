@@ -515,7 +515,6 @@ Este projeto é licenciado sob a MIT License - veja o arquivo LICENSE para detal
 ## 👥 Autores
 
 - **Aluno**: Patrick Do Nascimento Santos
-- **Matrícula**: 20219046182
 - **Orientadora**: Patricia Vieira da Silva Barros
 - **Instituição**: UFPI - Universidade Federal do Piauí
 
@@ -525,7 +524,7 @@ Este projeto é licenciado sob a MIT License - veja o arquivo LICENSE para detal
 
 Para dúvidas ou sugestões sobre o projeto:
 - Email: patricklx77@gmail.com
-- GitHub: [seu-github]
+- GitHub: [https://github.com/SantWRL]
 
 ---
 
@@ -553,7 +552,7 @@ Este projeto foi desenvolvido como parte de um TCC no programa de Educação Tut
 
 ## 📅 Data de Criação
 
-Teresina, Piauí - Abril de 2026
+Picos, Piauí - Abril de 2026
 
 **Status**: Em desenvolvimento ✨
 
