@@ -97,7 +97,6 @@ class QuizzesListAdapter(
         fun bind(quiz: Quiz) {
             binding.apply {
                 quizTitle.text = quiz.title
-                quizDescription.text = quiz.description
                 quizQuestions.text = "${quiz.totalQuestions} perguntas"
                 quizCategory.text = quiz.category
                 
