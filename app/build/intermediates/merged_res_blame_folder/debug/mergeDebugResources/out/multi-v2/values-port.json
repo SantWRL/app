@@ -4,7 +4,7 @@
             "outputFile": "br.ufpi.lgpd.educacional.app-mergeDebugResources-56:/values-port/values-port.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Gabriel Ramos\\.gradle\\caches\\transforms-4\\316503c5dcc4c8b61b00057b23c73fda\\transformed\\appcompat-1.6.1\\res\\values-port\\values-port.xml",
+                    "source": "C:\\Users\\patri\\.gradle\\caches\\transforms-4\\316503c5dcc4c8b61b00057b23c73fda\\transformed\\appcompat-1.6.1\\res\\values-port\\values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
