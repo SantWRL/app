@@ -4,6 +4,7 @@ package br.ufpi.lgpd.educacional.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -20,7 +21,7 @@ public final class FragmentOnboardingPageBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final View pageIcon;
+  public final ImageView pageIcon;
 
   @NonNull
   public final TextView pageSubtitle;
@@ -28,7 +29,7 @@ public final class FragmentOnboardingPageBinding implements ViewBinding {
   @NonNull
   public final TextView pageTitle;
 
-  private FragmentOnboardingPageBinding(@NonNull LinearLayout rootView, @NonNull View pageIcon,
+  private FragmentOnboardingPageBinding(@NonNull LinearLayout rootView, @NonNull ImageView pageIcon,
       @NonNull TextView pageSubtitle, @NonNull TextView pageTitle) {
     this.rootView = rootView;
     this.pageIcon = pageIcon;
@@ -64,7 +65,7 @@ public final class FragmentOnboardingPageBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.pageIcon;
-      View pageIcon = ViewBindings.findChildViewById(rootView, id);
+      ImageView pageIcon = ViewBindings.findChildViewById(rootView, id);
       if (pageIcon == null) {
         break missingId;
       }

@@ -16,22 +16,22 @@
 12-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:6:22-76
 13
 14    <permission
-14-->[androidx.core:core:1.12.0] C:\Users\patri\.gradle\caches\transforms-4\522d270e8eb5a419c6661a11d9d5edfb\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
+14-->[androidx.core:core:1.13.0] C:\Users\patri\.gradle\caches\transforms-4\a3db133ffc67abbc916a23ae4b5fd453\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
 15        android:name="br.ufpi.lgpd.educacional.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-15-->[androidx.core:core:1.12.0] C:\Users\patri\.gradle\caches\transforms-4\522d270e8eb5a419c6661a11d9d5edfb\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
+15-->[androidx.core:core:1.13.0] C:\Users\patri\.gradle\caches\transforms-4\a3db133ffc67abbc916a23ae4b5fd453\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
 16        android:protectionLevel="signature" />
-16-->[androidx.core:core:1.12.0] C:\Users\patri\.gradle\caches\transforms-4\522d270e8eb5a419c6661a11d9d5edfb\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
+16-->[androidx.core:core:1.13.0] C:\Users\patri\.gradle\caches\transforms-4\a3db133ffc67abbc916a23ae4b5fd453\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
 17
 18    <uses-permission android:name="br.ufpi.lgpd.educacional.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-18-->[androidx.core:core:1.12.0] C:\Users\patri\.gradle\caches\transforms-4\522d270e8eb5a419c6661a11d9d5edfb\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
-18-->[androidx.core:core:1.12.0] C:\Users\patri\.gradle\caches\transforms-4\522d270e8eb5a419c6661a11d9d5edfb\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
+18-->[androidx.core:core:1.13.0] C:\Users\patri\.gradle\caches\transforms-4\a3db133ffc67abbc916a23ae4b5fd453\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
+18-->[androidx.core:core:1.13.0] C:\Users\patri\.gradle\caches\transforms-4\a3db133ffc67abbc916a23ae4b5fd453\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
 19
 20    <application
 20-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:8:5-32:19
 21        android:allowBackup="true"
 21-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:9:9-35
 22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-22-->[androidx.core:core:1.12.0] C:\Users\patri\.gradle\caches\transforms-4\522d270e8eb5a419c6661a11d9d5edfb\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
+22-->[androidx.core:core:1.13.0] C:\Users\patri\.gradle\caches\transforms-4\a3db133ffc67abbc916a23ae4b5fd453\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
 23        android:debuggable="true"
 24        android:extractNativeLibs="false"
 25        android:icon="@android:drawable/sym_def_app_icon"

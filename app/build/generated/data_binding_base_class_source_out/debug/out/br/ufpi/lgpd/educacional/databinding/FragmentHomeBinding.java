@@ -22,6 +22,12 @@ public final class FragmentHomeBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
+  public final TextView homeDescription;
+
+  @NonNull
+  public final TextView homeGreeting;
+
+  @NonNull
   public final TextView lessonsCompletedText;
 
   @NonNull
@@ -39,11 +45,14 @@ public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   public final RecyclerView quizzesRecyclerView;
 
-  private FragmentHomeBinding(@NonNull ScrollView rootView, @NonNull TextView lessonsCompletedText,
+  private FragmentHomeBinding(@NonNull ScrollView rootView, @NonNull TextView homeDescription,
+      @NonNull TextView homeGreeting, @NonNull TextView lessonsCompletedText,
       @NonNull RecyclerView lessonsRecyclerView, @NonNull TextView pointsText,
       @NonNull ProgressBar progressBar, @NonNull TextView progressPercentage,
       @NonNull RecyclerView quizzesRecyclerView) {
     this.rootView = rootView;
+    this.homeDescription = homeDescription;
+    this.homeGreeting = homeGreeting;
     this.lessonsCompletedText = lessonsCompletedText;
     this.lessonsRecyclerView = lessonsRecyclerView;
     this.pointsText = pointsText;
@@ -79,6 +88,18 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.homeDescription;
+      TextView homeDescription = ViewBindings.findChildViewById(rootView, id);
+      if (homeDescription == null) {
+        break missingId;
+      }
+
+      id = R.id.homeGreeting;
+      TextView homeGreeting = ViewBindings.findChildViewById(rootView, id);
+      if (homeGreeting == null) {
+        break missingId;
+      }
+
       id = R.id.lessonsCompletedText;
       TextView lessonsCompletedText = ViewBindings.findChildViewById(rootView, id);
       if (lessonsCompletedText == null) {
@@ -115,8 +136,9 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((ScrollView) rootView, lessonsCompletedText,
-          lessonsRecyclerView, pointsText, progressBar, progressPercentage, quizzesRecyclerView);
+      return new FragmentHomeBinding((ScrollView) rootView, homeDescription, homeGreeting,
+          lessonsCompletedText, lessonsRecyclerView, pointsText, progressBar, progressPercentage,
+          quizzesRecyclerView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

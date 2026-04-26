@@ -7,17 +7,17 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import br.ufpi.lgpd.educacional.R;
+import com.google.android.material.card.MaterialCardView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class ItemAchievementBinding implements ViewBinding {
   @NonNull
-  private final CardView rootView;
+  private final MaterialCardView rootView;
 
   @NonNull
   public final TextView achievementIcon;
@@ -25,8 +25,8 @@ public final class ItemAchievementBinding implements ViewBinding {
   @NonNull
   public final TextView achievementName;
 
-  private ItemAchievementBinding(@NonNull CardView rootView, @NonNull TextView achievementIcon,
-      @NonNull TextView achievementName) {
+  private ItemAchievementBinding(@NonNull MaterialCardView rootView,
+      @NonNull TextView achievementIcon, @NonNull TextView achievementName) {
     this.rootView = rootView;
     this.achievementIcon = achievementIcon;
     this.achievementName = achievementName;
@@ -34,7 +34,7 @@ public final class ItemAchievementBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public CardView getRoot() {
+  public MaterialCardView getRoot() {
     return rootView;
   }
 
@@ -71,7 +71,8 @@ public final class ItemAchievementBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemAchievementBinding((CardView) rootView, achievementIcon, achievementName);
+      return new ItemAchievementBinding((MaterialCardView) rootView, achievementIcon,
+          achievementName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

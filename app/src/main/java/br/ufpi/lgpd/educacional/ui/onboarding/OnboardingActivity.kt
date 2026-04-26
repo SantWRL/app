@@ -38,7 +38,7 @@ class OnboardingActivity : AppCompatActivity() {
 
         binding.btnNext.setOnClickListener {
             val nextPage = binding.viewPager.currentItem + 1
-            if (nextPage < 3) {
+            if (nextPage < 5) {
                 binding.viewPager.currentItem = nextPage
             } else {
                 goToHome()
@@ -67,20 +67,33 @@ class OnboardingActivity : AppCompatActivity() {
     inner class OnboardingPagerAdapter(activity: AppCompatActivity) :
         FragmentStateAdapter(activity) {
 
-        override fun getItemCount(): Int = 3
+        override fun getItemCount(): Int = 5
 
         override fun createFragment(position: Int) = when (position) {
             0 -> OnboardingPageFragment.newInstance(
-                "Bem-vindo ao LGPD Educacional",
-                "Aprenda sobre proteção de dados de forma interativa e divertida"
+                getString(R.string.onboarding_welcome_title),
+                getString(R.string.onboarding_welcome_subtitle),
+                R.drawable.ic_home
             )
             1 -> OnboardingPageFragment.newInstance(
-                "Proteja Sua Privacidade",
-                "Entenda seus direitos e como proteger seus dados pessoais"
+                getString(R.string.onboarding_lgpd_title),
+                getString(R.string.onboarding_lgpd_subtitle),
+                R.drawable.ic_shield_lock
             )
             2 -> OnboardingPageFragment.newInstance(
-                "10 Direitos Fundamentais",
-                "Descubra quais são seus direitos como titular de dados"
+                getString(R.string.onboarding_privacy_title),
+                getString(R.string.onboarding_privacy_subtitle),
+                R.drawable.ic_profile
+            )
+            3 -> OnboardingPageFragment.newInstance(
+                getString(R.string.onboarding_rights_title),
+                getString(R.string.onboarding_rights_subtitle),
+                R.drawable.ic_book
+            )
+            4 -> OnboardingPageFragment.newInstance(
+                getString(R.string.onboarding_start_title),
+                getString(R.string.onboarding_start_subtitle),
+                R.drawable.ic_quiz
             )
             else -> OnboardingPageFragment()
         }

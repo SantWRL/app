@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -25,6 +26,9 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final RecyclerView achievementsRecyclerView;
 
   @NonNull
+  public final TextView avatarInitials;
+
+  @NonNull
   public final TextView averageScore;
 
   @NonNull
@@ -34,7 +38,13 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final Button logoutButton;
 
   @NonNull
+  public final EditText nameInput;
+
+  @NonNull
   public final TextView quizzesCompleted;
+
+  @NonNull
+  public final Button saveNameButton;
 
   @NonNull
   public final TextView userLevel;
@@ -46,16 +56,20 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final TextView userPoints;
 
   private FragmentProfileBinding(@NonNull ScrollView rootView,
-      @NonNull RecyclerView achievementsRecyclerView, @NonNull TextView averageScore,
-      @NonNull TextView lessonsCompleted, @NonNull Button logoutButton,
-      @NonNull TextView quizzesCompleted, @NonNull TextView userLevel, @NonNull TextView userName,
+      @NonNull RecyclerView achievementsRecyclerView, @NonNull TextView avatarInitials,
+      @NonNull TextView averageScore, @NonNull TextView lessonsCompleted,
+      @NonNull Button logoutButton, @NonNull EditText nameInput, @NonNull TextView quizzesCompleted,
+      @NonNull Button saveNameButton, @NonNull TextView userLevel, @NonNull TextView userName,
       @NonNull TextView userPoints) {
     this.rootView = rootView;
     this.achievementsRecyclerView = achievementsRecyclerView;
+    this.avatarInitials = avatarInitials;
     this.averageScore = averageScore;
     this.lessonsCompleted = lessonsCompleted;
     this.logoutButton = logoutButton;
+    this.nameInput = nameInput;
     this.quizzesCompleted = quizzesCompleted;
+    this.saveNameButton = saveNameButton;
     this.userLevel = userLevel;
     this.userName = userName;
     this.userPoints = userPoints;
@@ -94,6 +108,12 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.avatarInitials;
+      TextView avatarInitials = ViewBindings.findChildViewById(rootView, id);
+      if (avatarInitials == null) {
+        break missingId;
+      }
+
       id = R.id.averageScore;
       TextView averageScore = ViewBindings.findChildViewById(rootView, id);
       if (averageScore == null) {
@@ -112,9 +132,21 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.nameInput;
+      EditText nameInput = ViewBindings.findChildViewById(rootView, id);
+      if (nameInput == null) {
+        break missingId;
+      }
+
       id = R.id.quizzesCompleted;
       TextView quizzesCompleted = ViewBindings.findChildViewById(rootView, id);
       if (quizzesCompleted == null) {
+        break missingId;
+      }
+
+      id = R.id.saveNameButton;
+      Button saveNameButton = ViewBindings.findChildViewById(rootView, id);
+      if (saveNameButton == null) {
         break missingId;
       }
 
@@ -137,8 +169,8 @@ public final class FragmentProfileBinding implements ViewBinding {
       }
 
       return new FragmentProfileBinding((ScrollView) rootView, achievementsRecyclerView,
-          averageScore, lessonsCompleted, logoutButton, quizzesCompleted, userLevel, userName,
-          userPoints);
+          avatarInitials, averageScore, lessonsCompleted, logoutButton, nameInput, quizzesCompleted,
+          saveNameButton, userLevel, userName, userPoints);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

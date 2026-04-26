@@ -9,7 +9,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import br.ufpi.lgpd.educacional.R
 import br.ufpi.lgpd.educacional.databinding.FragmentProfileBinding
+import br.ufpi.lgpd.educacional.util.UserPreferences
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
 
 /**
@@ -21,6 +24,7 @@ class ProfileFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel: ProfileViewModel by viewModels()
+    private lateinit var userPreferences: UserPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,8 +38,24 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        userPreferences = UserPreferences(requireContext())
+        setupProfileEditor()
         observeData()
-        viewModel.loadUserProfile()
+        viewModel.loadUserProfile(userPreferences.userName)
+    }
+
+    private fun setupProfileEditor() {
+        binding.nameInput.setText(userPreferences.userName)
+        binding.saveNameButton.setOnClickListener {
+            val typedName = binding.nameInput.text?.toString().orEmpty().trim()
+            if (typedName.isNotBlank()) {
+                userPreferences.userName = typedName
+                viewModel.updateProfile(viewModel.userProfile.value.copy(name = typedName))
+                Snackbar.make(binding.root, getString(R.string.profile_saved_name), Snackbar.LENGTH_SHORT).show()
+            } else {
+                binding.nameInput.error = getString(R.string.profile_name_hint)
+            }
+        }
     }
 
     private fun observeData() {
@@ -56,6 +76,19 @@ class ProfileFragment : Fragment() {
             lessonsCompleted.text = "${profile.lessonsCompleted} concluídas"
             quizzesCompleted.text = "${profile.quizzesCompleted} resolvidos"
             averageScore.text = "%.1f%%".format(profile.averageScore)
+            avatarInitials.text = getInitials(profile.name)
+            if (nameInput.text.isNullOrBlank()) {
+                nameInput.setText(profile.name)
+            }
+        }
+    }
+
+    private fun getInitials(name: String): String {
+        val words = name.trim().split(" ").filter { it.isNotBlank() }
+        return when {
+            words.isEmpty() -> "U"
+            words.size == 1 -> words.first().take(2).uppercase()
+            else -> (words.first().first().toString() + words.last().first().toString()).uppercase()
         }
     }
 

@@ -49,7 +49,7 @@ dependencies {
     implementation("androidx.fragment:fragment-ktx:1.6.2")
 
     // Material Design
-    implementation("com.google.android.material:material:1.10.0")
+    implementation("com.google.android.material:material:1.12.0")
     
     // Layouts & UI
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")

@@ -34,6 +34,14 @@
     <color name="text_tertiary">#9CA3AF</color>
     <color name="warning">#FBBF24</color>
     <color name="white">#FFFFFF</color>
+    <dimen name="bottom_nav_height">64dp</dimen>
+    <dimen name="card_corner_radius">16dp</dimen>
+    <dimen name="card_corner_radius_small">12dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="padding_card">20dp</dimen>
+    <dimen name="padding_screen">20dp</dimen>
+    <dimen name="padding_screen_horizontal">20dp</dimen>
+    <dimen name="toolbar_elevation">4dp</dimen>
     <string name="app_name">LGPD Educacional</string>
     <string name="button_back">Voltar</string>
     <string name="button_continue">Continuar</string>
@@ -41,11 +49,15 @@
     <string name="button_retry">Tentar Novamente</string>
     <string name="button_start">Iniciar</string>
     <string name="button_submit">Enviar</string>
+    <string name="home_greeting">Olá, %1$s!</string>
     <string name="home_lessons">Lições</string>
+    <string name="home_lgpd_summary_text">A Lei Geral de Proteção de Dados garante direitos aos titulares e obriga empresas a tratar seus dados com responsabilidade.</string>
+    <string name="home_lgpd_summary_title">O que é LGPD?</string>
     <string name="home_progress">Seu Progresso</string>
     <string name="home_quizzes">Testes</string>
     <string name="home_scenarios">Cenários</string>
     <string name="home_subtitle">Proteja seus dados pessoais</string>
+    <string name="home_summary">A LGPD protege seus dados pessoais e dá a você mais controle sobre como suas informações são usadas.</string>
     <string name="home_title">Aprender</string>
     <string name="lesson_academic">LGPD no Contexto Acadêmico</string>
     <string name="lesson_actors">Atores da LGPD</string>
@@ -57,11 +69,17 @@
     <string name="message_loading">Carregando...</string>
     <string name="message_no_connection">Sem conexão de internet</string>
     <string name="message_success">Sucesso!</string>
+    <string name="onboarding_data_subtitle">Você tem controle sobre como suas informações são usadas</string>
+    <string name="onboarding_data_title">Seus Dados</string>
     <string name="onboarding_get_started">Começar</string>
+    <string name="onboarding_lgpd_subtitle">Lei Geral de Proteção de Dados - Lei nº 13.709/2018</string>
+    <string name="onboarding_lgpd_title">O que é LGPD?</string>
     <string name="onboarding_privacy_subtitle">Entenda seus direitos na era digital</string>
     <string name="onboarding_privacy_title">Sua Privacidade</string>
     <string name="onboarding_rights_subtitle">10 direitos fundamentais do titular de dados</string>
     <string name="onboarding_rights_title">Seus Direitos</string>
+    <string name="onboarding_start_subtitle">Explore lições, testes e cenários práticos sobre LGPD</string>
+    <string name="onboarding_start_title">Vamos Começar!</string>
     <string name="onboarding_welcome_subtitle">Aprenda sobre proteção de dados de forma interativa</string>
     <string name="onboarding_welcome_title">Bem-vindo ao LGPD Educacional</string>
     <string name="principle_access">Livre Acesso</string>
@@ -77,8 +95,11 @@
     <string name="profile_achievements">Conquistas</string>
     <string name="profile_lessons_completed">Lições Concluídas</string>
     <string name="profile_level">Nível</string>
+    <string name="profile_name_hint">Digite seu nome</string>
     <string name="profile_points">Pontos</string>
     <string name="profile_quizzes_completed">Testes Concluídos</string>
+    <string name="profile_save_name">Salvar nome</string>
+    <string name="profile_saved_name">Nome salvo com sucesso</string>
     <string name="profile_title">Seu Perfil</string>
     <string name="quiz_correct">Correto!</string>
     <string name="quiz_finish">Finalizar</string>
@@ -101,18 +122,19 @@
     <string name="scenario_decision">Qual é a ação correta?</string>
     <string name="scenario_subtitle">Teste seus conhecimentos em situações do dia a dia</string>
     <string name="scenario_title">Cenários Reais</string>
-    <style name="Button.Primary" parent="Widget.MaterialComponents.Button">
+    <style name="Button.Primary" parent="Widget.Material3.Button">
         <item name="android:textColor">@color/white</item>
         <item name="backgroundTint">@color/primary</item>
-        <item name="cornerRadius">8dp</item>
+        <item name="cornerRadius">12dp</item>
     </style>
-    <style name="Button.Secondary" parent="Widget.MaterialComponents.Button.OutlinedButton">
+    <style name="Button.Secondary" parent="Widget.Material3.Button.OutlinedButton">
         <item name="strokeColor">@color/primary</item>
         <item name="android:textColor">@color/primary</item>
+        <item name="cornerRadius">12dp</item>
     </style>
-    <style name="Card.Default" parent="Widget.MaterialComponents.CardView">
-        <item name="cardCornerRadius">12dp</item>
-        <item name="cardElevation">2dp</item>
+    <style name="Card.Default" parent="Widget.Material3.CardView.Filled">
+        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
         <item name="android:layout_margin">8dp</item>
     </style>
     <style name="TextAppearance.Body" parent="TextAppearance.MaterialComponents.Body1">
@@ -123,6 +145,9 @@
     <style name="TextAppearance.BodySmall" parent="TextAppearance.MaterialComponents.Body2">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/text_secondary</item>
+    </style>
+    <style name="TextAppearance.LGPD.ToolbarTitle" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="TextAppearance.LargeTitle" parent="TextAppearance.MaterialComponents.Headline1">
         <item name="android:textSize">32sp</item>
@@ -138,17 +163,21 @@
         <item name="android:textColor">@color/text_primary</item>
         <item name="android:textStyle">bold</item>
     </style>
-    <style name="Theme.LGPDEducacional" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        
+    <style name="Theme.LGPDEducacional" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/text_on_primary</item>
+        <item name="colorPrimaryContainer">@color/primary_light</item>
+        <item name="colorOnPrimaryContainer">@color/primary_dark</item>
         <item name="colorSecondary">@color/secondary</item>
-        <item name="colorSecondaryVariant">@color/secondary_dark</item>
-        
-        
-        <item name="android:statusBarColor">@color/primary</item>
-        
-        
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/secondary_light</item>
+        <item name="colorOnSecondaryContainer">@color/secondary_dark</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurfaceVariant">@color/surface_variant</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:navigationBarColor">@color/surface</item>
         <item name="android:windowBackground">@color/background</item>
         <item name="android:textColorPrimary">@color/text_primary</item>
         <item name="android:textColorSecondary">@color/text_secondary</item>

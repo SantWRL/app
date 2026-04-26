@@ -16,6 +16,10 @@
         "source": "br.ufpi.lgpd.educacional.app-main-60:/layout/fragment_lessons.xml"
     },
     {
+        "merged": "br.ufpi.lgpd.educacional.app-debug-58:/color_bottom_nav_selector.xml.flat",
+        "source": "br.ufpi.lgpd.educacional.app-main-60:/color/bottom_nav_selector.xml"
+    },
+    {
         "merged": "br.ufpi.lgpd.educacional.app-debug-58:/drawable_ic_book.xml.flat",
         "source": "br.ufpi.lgpd.educacional.app-main-60:/drawable/ic_book.xml"
     },
@@ -24,16 +28,20 @@
         "source": "br.ufpi.lgpd.educacional.app-main-60:/layout/fragment_quizzes.xml"
     },
     {
-        "merged": "br.ufpi.lgpd.educacional.app-debug-58:/layout_item_lesson_list.xml.flat",
-        "source": "br.ufpi.lgpd.educacional.app-main-60:/layout/item_lesson_list.xml"
-    },
-    {
         "merged": "br.ufpi.lgpd.educacional.app-debug-58:/layout_item_quiz_list.xml.flat",
         "source": "br.ufpi.lgpd.educacional.app-main-60:/layout/item_quiz_list.xml"
     },
     {
+        "merged": "br.ufpi.lgpd.educacional.app-debug-58:/layout_item_lesson_list.xml.flat",
+        "source": "br.ufpi.lgpd.educacional.app-main-60:/layout/item_lesson_list.xml"
+    },
+    {
         "merged": "br.ufpi.lgpd.educacional.app-debug-58:/drawable_progress_bar.xml.flat",
         "source": "br.ufpi.lgpd.educacional.app-main-60:/drawable/progress_bar.xml"
+    },
+    {
+        "merged": "br.ufpi.lgpd.educacional.app-debug-58:/drawable_bg_achievement_icon.xml.flat",
+        "source": "br.ufpi.lgpd.educacional.app-main-60:/drawable/bg_achievement_icon.xml"
     },
     {
         "merged": "br.ufpi.lgpd.educacional.app-debug-58:/navigation_nav_graph.xml.flat",
@@ -82,6 +90,14 @@
     {
         "merged": "br.ufpi.lgpd.educacional.app-debug-58:/drawable_ic_question.xml.flat",
         "source": "br.ufpi.lgpd.educacional.app-main-60:/drawable/ic_question.xml"
+    },
+    {
+        "merged": "br.ufpi.lgpd.educacional.app-debug-58:/drawable_bg_toolbar.xml.flat",
+        "source": "br.ufpi.lgpd.educacional.app-main-60:/drawable/bg_toolbar.xml"
+    },
+    {
+        "merged": "br.ufpi.lgpd.educacional.app-debug-58:/drawable_bg_avatar_circle.xml.flat",
+        "source": "br.ufpi.lgpd.educacional.app-main-60:/drawable/bg_avatar_circle.xml"
     },
     {
         "merged": "br.ufpi.lgpd.educacional.app-debug-58:/menu_bottom_nav_menu.xml.flat",

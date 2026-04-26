@@ -10,9 +10,11 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
+import br.ufpi.lgpd.educacional.R
 import br.ufpi.lgpd.educacional.databinding.FragmentHomeBinding
 import br.ufpi.lgpd.educacional.ui.adapter.LessonCardAdapter
 import br.ufpi.lgpd.educacional.ui.adapter.QuizCardAdapter
+import br.ufpi.lgpd.educacional.util.UserPreferences
 import kotlinx.coroutines.launch
 
 /**
@@ -24,6 +26,7 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel: HomeViewModel by viewModels()
+    private lateinit var userPreferences: UserPreferences
 
     private lateinit var lessonAdapter: LessonCardAdapter
     private lateinit var quizAdapter: QuizCardAdapter
@@ -40,9 +43,16 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        userPreferences = UserPreferences(requireContext())
         setupRecyclerViews()
         observeData()
         loadContent()
+        updateGreeting()
+    }
+
+    private fun updateGreeting() {
+        binding.homeGreeting.text = getString(R.string.home_greeting, userPreferences.userName)
+        binding.homeDescription.text = getString(R.string.home_summary)
     }
 
     private fun setupRecyclerViews() {
@@ -108,6 +118,11 @@ class HomeFragment : Fragment() {
         viewModel.loadLessons()
         viewModel.loadQuizzes()
         viewModel.loadUserProgress()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        updateGreeting()
     }
 
     override fun onDestroyView() {

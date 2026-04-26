@@ -23,12 +23,12 @@ class ProfileViewModel : ViewModel() {
     private val _isLoading = MutableStateFlow(false)
     val isLoading: StateFlow<Boolean> = _isLoading.asStateFlow()
 
-    fun loadUserProfile() {
+    fun loadUserProfile(savedName: String = "Joao Silva") {
         viewModelScope.launch {
             _isLoading.value = true
             try {
                 _userProfile.value = UserProfile(
-                    name = "Joao Silva",
+                    name = savedName.ifBlank { "Joao Silva" },
                     email = "joao@ufpi.br",
                     level = 2,
                     totalPoints = 350,

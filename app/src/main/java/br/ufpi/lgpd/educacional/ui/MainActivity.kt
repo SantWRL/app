@@ -50,11 +50,12 @@ class MainActivity : AppCompatActivity() {
 
         // Listener para mudança de fragmentos
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            when (destination.id) {
-                R.id.homeFragment -> binding.appBarTitle.text = getString(R.string.home_title)
-                R.id.lessonsFragment -> binding.appBarTitle.text = getString(R.string.home_lessons)
-                R.id.quizzesFragment -> binding.appBarTitle.text = getString(R.string.home_quizzes)
-                R.id.profileFragment -> binding.appBarTitle.text = getString(R.string.profile_title)
+            binding.toolbar.title = when (destination.id) {
+                R.id.homeFragment -> getString(R.string.home_title)
+                R.id.lessonsFragment -> getString(R.string.home_lessons)
+                R.id.quizzesFragment -> getString(R.string.home_quizzes)
+                R.id.profileFragment -> getString(R.string.profile_title)
+                else -> getString(R.string.home_title)
             }
         }
     }

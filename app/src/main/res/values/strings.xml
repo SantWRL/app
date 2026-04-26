@@ -9,11 +9,21 @@
     <string name="onboarding_privacy_subtitle">Entenda seus direitos na era digital</string>
     <string name="onboarding_rights_title">Seus Direitos</string>
     <string name="onboarding_rights_subtitle">10 direitos fundamentais do titular de dados</string>
+    <string name="onboarding_lgpd_title">O que é LGPD?</string>
+    <string name="onboarding_lgpd_subtitle">Lei Geral de Proteção de Dados - Lei nº 13.709/2018</string>
+    <string name="onboarding_data_title">Seus Dados</string>
+    <string name="onboarding_data_subtitle">Você tem controle sobre como suas informações são usadas</string>
+    <string name="onboarding_start_title">Vamos Começar!</string>
+    <string name="onboarding_start_subtitle">Explore lições, testes e cenários práticos sobre LGPD</string>
     <string name="onboarding_get_started">Começar</string>
     
     <!-- Home -->
     <string name="home_title">Aprender</string>
     <string name="home_subtitle">Proteja seus dados pessoais</string>
+    <string name="home_greeting">Olá, %1$s!</string>
+    <string name="home_summary">A LGPD protege seus dados pessoais e dá a você mais controle sobre como suas informações são usadas.</string>
+    <string name="home_lgpd_summary_title">O que é LGPD?</string>
+    <string name="home_lgpd_summary_text">A Lei Geral de Proteção de Dados garante direitos aos titulares e obriga empresas a tratar seus dados com responsabilidade.</string>
     <string name="home_lessons">Lições</string>
     <string name="home_quizzes">Testes</string>
     <string name="home_scenarios">Cenários</string>
@@ -73,6 +83,9 @@
     <string name="profile_lessons_completed">Lições Concluídas</string>
     <string name="profile_quizzes_completed">Testes Concluídos</string>
     <string name="profile_achievements">Conquistas</string>
+    <string name="profile_name_hint">Digite seu nome</string>
+    <string name="profile_save_name">Salvar nome</string>
+    <string name="profile_saved_name">Nome salvo com sucesso</string>
     
     <!-- Buttons -->
     <string name="button_continue">Continuar</string>

@@ -4,7 +4,7 @@
             "outputFile": "br.ufpi.lgpd.educacional.app-mergeDebugResources-56:/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\patri\\.gradle\\caches\\transforms-4\\522d270e8eb5a419c6661a11d9d5edfb\\transformed\\core-1.12.0\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "source": "C:\\Users\\patri\\.gradle\\caches\\transforms-4\\a3db133ffc67abbc916a23ae4b5fd453\\transformed\\core-1.13.0\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

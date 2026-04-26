@@ -7,17 +7,17 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import br.ufpi.lgpd.educacional.R;
+import com.google.android.material.card.MaterialCardView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class ItemQuizCardBinding implements ViewBinding {
   @NonNull
-  private final CardView rootView;
+  private final MaterialCardView rootView;
 
   @NonNull
   public final TextView difficultyBadge;
@@ -31,7 +31,7 @@ public final class ItemQuizCardBinding implements ViewBinding {
   @NonNull
   public final TextView quizTitle;
 
-  private ItemQuizCardBinding(@NonNull CardView rootView, @NonNull TextView difficultyBadge,
+  private ItemQuizCardBinding(@NonNull MaterialCardView rootView, @NonNull TextView difficultyBadge,
       @NonNull TextView quizDescription, @NonNull TextView quizQuestions,
       @NonNull TextView quizTitle) {
     this.rootView = rootView;
@@ -43,7 +43,7 @@ public final class ItemQuizCardBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public CardView getRoot() {
+  public MaterialCardView getRoot() {
     return rootView;
   }
 
@@ -92,7 +92,7 @@ public final class ItemQuizCardBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemQuizCardBinding((CardView) rootView, difficultyBadge, quizDescription,
+      return new ItemQuizCardBinding((MaterialCardView) rootView, difficultyBadge, quizDescription,
           quizQuestions, quizTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);

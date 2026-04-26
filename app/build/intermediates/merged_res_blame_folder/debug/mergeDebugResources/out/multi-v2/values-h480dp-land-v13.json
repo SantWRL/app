@@ -4,7 +4,7 @@
             "outputFile": "br.ufpi.lgpd.educacional.app-mergeDebugResources-56:/values-h480dp-land-v13/values-h480dp-land-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\patri\\.gradle\\caches\\transforms-4\\04971b5de58938f63e258a3db9c67031\\transformed\\material-1.10.0\\res\\values-h480dp-land-v13\\values-h480dp-land-v13.xml",
+                    "source": "C:\\Users\\patri\\.gradle\\caches\\transforms-4\\30dbe09adc47a6fa3161e128d9fbb6b2\\transformed\\material-1.12.0\\res\\values-h480dp-land-v13\\values-h480dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
