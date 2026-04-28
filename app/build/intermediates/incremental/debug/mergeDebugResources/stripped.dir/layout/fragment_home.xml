@@ -22,8 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:textAppearance="?attr/textAppearanceHeadlineSmall"
-            android:textColor="@color/text_primary"
+            android:textAppearance="@style/TextAppearance.LGPD.ScreenTitle"
             android:text="Olá, Usuário!" />
 
         <TextView
@@ -31,9 +30,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="18dp"
-            android:text="Aprenda sobre seus direitos na proteção de dados e veja como a LGPD faz parte do seu dia a dia." 
-            android:textColor="@color/text_secondary"
-            android:textSize="15sp" />
+            android:textAppearance="@style/TextAppearance.LGPD.Body"
+            android:text="Aprenda sobre seus direitos na proteção de dados e veja como a LGPD faz parte do seu dia a dia." />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
@@ -55,11 +53,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="14dp"
-                    android:letterSpacing="0.02"
-                    android:text="@string/home_progress"
-                    android:textColor="@color/text_primary"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textAppearance="@style/TextAppearance.LGPD.SectionTitle"
+                    android:text="@string/home_progress" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -179,18 +174,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:letterSpacing="0.02"
-                    android:text="@string/home_lgpd_summary_title"
-                    android:textColor="@color/text_primary"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:textAppearance="@style/TextAppearance.LGPD.SectionTitle"
+                    android:text="@string/home_lgpd_summary_title" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/home_lgpd_summary_text"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="14sp" />
+                    android:textAppearance="@style/TextAppearance.LGPD.BodySmall"
+                    android:text="@string/home_lgpd_summary_text" />
 
             </LinearLayout>
 

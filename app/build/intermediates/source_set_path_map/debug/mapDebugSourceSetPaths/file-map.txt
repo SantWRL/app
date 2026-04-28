@@ -52,10 +52,10 @@ br.ufpi.lgpd.educacional.app-sqlite-framework-2.4.0-50 C:\Users\patri\.gradle\ca
 br.ufpi.lgpd.educacional.app-lifecycle-runtime-2.6.2-51 C:\Users\patri\.gradle\caches\transforms-4\f0d9cfbdb784c10d6a0f1a5315cd19fe\transformed\lifecycle-runtime-2.6.2\res
 br.ufpi.lgpd.educacional.app-jetified-lifecycle-process-2.6.2-52 C:\Users\patri\.gradle\caches\transforms-4\fb99d2e7300697320c8e58b01eb106da\transformed\jetified-lifecycle-process-2.6.2\res
 br.ufpi.lgpd.educacional.app-jetified-savedstate-ktx-1.2.1-53 C:\Users\patri\.gradle\caches\transforms-4\fca00ee5c06f15c6b2f5d6c6b48fe853\transformed\jetified-savedstate-ktx-1.2.1\res
-br.ufpi.lgpd.educacional.app-pngs-54 C:\Users\patri\Downloads\app-TCC\app-TCC\app\build\generated\res\pngs\debug
-br.ufpi.lgpd.educacional.app-resValues-55 C:\Users\patri\Downloads\app-TCC\app-TCC\app\build\generated\res\resValues\debug
-br.ufpi.lgpd.educacional.app-packageDebugResources-56 C:\Users\patri\Downloads\app-TCC\app-TCC\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-br.ufpi.lgpd.educacional.app-packageDebugResources-57 C:\Users\patri\Downloads\app-TCC\app-TCC\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-br.ufpi.lgpd.educacional.app-debug-58 C:\Users\patri\Downloads\app-TCC\app-TCC\app\build\intermediates\merged_res\debug\mergeDebugResources
-br.ufpi.lgpd.educacional.app-debug-59 C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\debug\res
-br.ufpi.lgpd.educacional.app-main-60 C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\res
+br.ufpi.lgpd.educacional.app-pngs-54 C:\Users\patri\Documents\GitHub\app_lgpd\app\build\generated\res\pngs\debug
+br.ufpi.lgpd.educacional.app-resValues-55 C:\Users\patri\Documents\GitHub\app_lgpd\app\build\generated\res\resValues\debug
+br.ufpi.lgpd.educacional.app-packageDebugResources-56 C:\Users\patri\Documents\GitHub\app_lgpd\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+br.ufpi.lgpd.educacional.app-packageDebugResources-57 C:\Users\patri\Documents\GitHub\app_lgpd\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+br.ufpi.lgpd.educacional.app-debug-58 C:\Users\patri\Documents\GitHub\app_lgpd\app\build\intermediates\merged_res\debug\mergeDebugResources
+br.ufpi.lgpd.educacional.app-debug-59 C:\Users\patri\Documents\GitHub\app_lgpd\app\src\debug\res
+br.ufpi.lgpd.educacional.app-main-60 C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\res

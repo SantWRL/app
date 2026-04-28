@@ -9,11 +9,11 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:5:5-67
-11-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:5:22-64
+11-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:5:22-64
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:6:5-79
-12-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:6:22-76
+12-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:6:5-79
+12-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:6:22-76
 13
 14    <permission
 14-->[androidx.core:core:1.13.0] C:\Users\patri\.gradle\caches\transforms-4\a3db133ffc67abbc916a23ae4b5fd453\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
@@ -27,50 +27,50 @@
 18-->[androidx.core:core:1.13.0] C:\Users\patri\.gradle\caches\transforms-4\a3db133ffc67abbc916a23ae4b5fd453\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
 19
 20    <application
-20-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:8:5-32:19
+20-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:8:5-32:19
 21        android:allowBackup="true"
-21-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:9:9-35
+21-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:9:9-35
 22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 22-->[androidx.core:core:1.13.0] C:\Users\patri\.gradle\caches\transforms-4\a3db133ffc67abbc916a23ae4b5fd453\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
 23        android:debuggable="true"
 24        android:extractNativeLibs="false"
 25        android:icon="@android:drawable/sym_def_app_icon"
-25-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:10:9-58
+25-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:10:9-58
 26        android:label="@string/app_name"
-26-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:11:9-41
+26-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:11:9-41
 27        android:supportsRtl="true"
-27-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:12:9-35
+27-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:12:9-35
 28        android:theme="@style/Theme.LGPDEducacional"
-28-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:13:9-53
+28-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:13:9-53
 29        android:usesCleartextTraffic="false" >
-29-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:14:9-45
+29-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:14:9-45
 30        <activity
-30-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:17:9-25:20
+30-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:17:9-25:20
 31            android:name="br.ufpi.lgpd.educacional.ui.MainActivity"
-31-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:18:13-44
+31-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:18:13-44
 32            android:exported="true"
-32-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:19:13-36
+32-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:19:13-36
 33            android:theme="@style/Theme.LGPDEducacional" >
-33-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:20:13-57
+33-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:20:13-57
 34            <intent-filter>
-34-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:21:13-24:29
+34-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:21:13-24:29
 35                <action android:name="android.intent.action.MAIN" />
-35-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:22:17-69
-35-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:22:25-66
+35-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:22:17-69
+35-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:22:25-66
 36
 37                <category android:name="android.intent.category.LAUNCHER" />
-37-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:23:17-77
-37-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:23:27-74
+37-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:23:17-77
+37-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:23:27-74
 38            </intent-filter>
 39        </activity>
 40        <activity
-40-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:27:9-30:60
+40-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:27:9-30:60
 41            android:name="br.ufpi.lgpd.educacional.ui.onboarding.OnboardingActivity"
-41-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:28:13-61
+41-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:28:13-61
 42            android:exported="false"
-42-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:29:13-37
+42-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:29:13-37
 43            android:theme="@style/Theme.LGPDEducacional" />
-43-->C:\Users\patri\Downloads\app-TCC\app-TCC\app\src\main\AndroidManifest.xml:30:13-57
+43-->C:\Users\patri\Documents\GitHub\app_lgpd\app\src\main\AndroidManifest.xml:30:13-57
 44
 45        <provider
 45-->[androidx.emoji2:emoji2:1.2.0] C:\Users\patri\.gradle\caches\transforms-4\a93ecee46efbb2d9440546a632f87342\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20

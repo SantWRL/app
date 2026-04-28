@@ -41,11 +41,9 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="2"
-            android:text="Primeiro Passo"
+            android:textAppearance="@style/TextAppearance.LGPD.BodySmall"
             android:textAlignment="center"
-            android:textColor="@color/text_primary"
-            android:textSize="12sp"
-            android:textStyle="bold"
+            android:text="Primeiro Passo"
             tools:text="Primeiro Passo" />
 
     </LinearLayout>

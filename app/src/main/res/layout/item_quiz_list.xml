@@ -12,16 +12,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="12dp"
-        android:background="@color/white"
-        android:gravity="center_vertical">
+        android:background="@color/surface">
 
-        <!-- Ícone de Quiz -->
         <FrameLayout
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginEnd="12dp"
-            android:background="@color/secondary_light"
-            android:outlineProvider="bounds">
+            android:background="@color/secondary_light">
 
             <ImageView
                 android:layout_width="24dp"
@@ -52,12 +49,11 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Título do Quiz"
-                    android:textSize="14sp"
+                    android:textAppearance="@style/TextAppearance.LGPD.Body"
                     android:textStyle="bold"
-                    android:textColor="@color/text_primary"
                     android:ellipsize="end"
-                    android:maxLines="1" />
+                    android:maxLines="1"
+                    android:text="Título do Quiz" />
 
                 <TextView
                     android:id="@+id/difficultyBadge"
@@ -86,11 +82,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Categoria"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_secondary"
+                    android:textAppearance="@style/TextAppearance.LGPD.BodySmall"
                     android:ellipsize="end"
-                    android:maxLines="1" />
+                    android:maxLines="1"
+                    android:text="Categoria" />
 
                 <ImageView
                     android:layout_width="14dp"
@@ -105,9 +100,8 @@
                     android:id="@+id/quizQuestions"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="5"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_secondary" />
+                    android:textAppearance="@style/TextAppearance.LGPD.BodySmall"
+                    android:text="5" />
 
             </LinearLayout>
 

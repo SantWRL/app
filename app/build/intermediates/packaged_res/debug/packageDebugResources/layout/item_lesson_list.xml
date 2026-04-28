@@ -12,23 +12,20 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="12dp"
-        android:background="@color/white"
-        android:gravity="center_vertical">
+        android:background="@color/surface">
 
-        <!-- Número da Lição -->
         <FrameLayout
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginEnd="12dp"
-            android:background="@color/primary_light"
-            android:outlineProvider="bounds">
+            android:background="@color/primary_light">
 
             <TextView
                 android:id="@+id/lessonNumber"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="1"
-                android:textSize="18sp"
+                android:textAppearance="@style/TextAppearance.LGPD.SectionTitle"
                 android:textStyle="bold"
                 android:textColor="@color/primary"
                 android:gravity="center" />
@@ -54,12 +51,11 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Título da Lição"
-                    android:textSize="14sp"
+                    android:textAppearance="@style/TextAppearance.LGPD.Body"
                     android:textStyle="bold"
-                    android:textColor="@color/text_primary"
                     android:ellipsize="end"
-                    android:maxLines="1" />
+                    android:maxLines="1"
+                    android:text="Título da Lição" />
 
                 <TextView
                     android:id="@+id/difficultyBadge"
@@ -81,11 +77,10 @@
                 android:id="@+id/lessonDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Descrição"
-                android:textSize="12sp"
-                android:textColor="@color/text_secondary"
+                android:textAppearance="@style/TextAppearance.LGPD.BodySmall"
                 android:ellipsize="end"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:text="Descrição" />
 
         </LinearLayout>
 

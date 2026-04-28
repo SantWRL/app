@@ -34,7 +34,7 @@
         android:orientation="horizontal"
         android:padding="16dp"
         android:gravity="center"
-        android:background="@color/white">
+        android:background="@color/surface">
 
         <Button
             android:id="@+id/btnSkip"

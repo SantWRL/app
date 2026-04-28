@@ -208,10 +208,9 @@ string scenario_title
 style Button.Primary
 style Button.Secondary
 style Card.Default
-style TextAppearance.Body
-style TextAppearance.BodySmall
+style TextAppearance.LGPD.Body
+style TextAppearance.LGPD.BodySmall
+style TextAppearance.LGPD.ScreenTitle
+style TextAppearance.LGPD.SectionTitle
 style TextAppearance.LGPD.ToolbarTitle
-style TextAppearance.LargeTitle
-style TextAppearance.Subtitle
-style TextAppearance.Title
 style Theme.LGPDEducacional

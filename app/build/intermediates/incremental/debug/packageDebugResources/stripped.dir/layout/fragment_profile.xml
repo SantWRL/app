@@ -57,21 +57,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="4dp"
-                    android:text="João Silva"
+                    android:textAppearance="@style/TextAppearance.LGPD.SectionTitle"
                     android:textAlignment="center"
-                    android:textColor="@color/text_primary"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
+                    android:text="João Silva" />
 
                 <TextView
                     android:id="@+id/userLevel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="18dp"
-                    android:text="Nível 1"
+                    android:textAppearance="@style/TextAppearance.LGPD.BodySmall"
                     android:textAlignment="center"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="15sp" />
+                    android:text="Nível 1" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -84,10 +81,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="14dp"
+                        android:textAppearance="@style/TextAppearance.LGPD.SectionTitle"
                         android:text="0 pontos"
-                        android:textColor="@color/secondary"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textColor="@color/secondary" />
 
                     <View
                         android:layout_width="1dp"
@@ -290,11 +286,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
-                android:letterSpacing="0.02"
-                android:text="@string/profile_achievements"
-                android:textColor="@color/text_primary"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textAppearance="@style/TextAppearance.LGPD.SectionTitle"
+                android:text="@string/profile_achievements" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/achievementsRecyclerView"
