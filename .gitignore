@@ -1,0 +1,55 @@
+# Android
+*.apk
+*.ap_
+*.dex
+*.class
+bin/
+gen/
+build/
+.gradle
+.idea/
+*.iml
+*.iws
+*.ipr
+local.properties
+*.swp
+
+# Gradle
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+
+# Android Studio
+captures/
+.externalNativeBuild
+.cxx
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+.DS_Store?
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+
+# Node (if using)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment
+.env
+.env.local
+*.pem
+
+# IDE
+*.sublime-project
+*.sublime-workspace
