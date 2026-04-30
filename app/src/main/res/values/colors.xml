@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Primary Colors -->
-    <color name="primary">#6D28D9</color>
-    <color name="primary_dark">#4C1D95</color>
-    <color name="primary_light">#EDE9FE</color>
+    <color name="primary">#2563EB</color>
+    <color name="primary_dark">#1E3A8A</color>
+    <color name="primary_light">#DBEAFE</color>
 
     <!-- Secondary Colors -->
-    <color name="secondary">#38BDF8</color>
-    <color name="secondary_dark">#0E7490</color>
-    <color name="secondary_light">#DBEAFE</color>
+    <color name="secondary">#0F766E</color>
+    <color name="secondary_dark">#134E4A</color>
+    <color name="secondary_light">#CCFBF1</color>
 
     <!-- Accent Colors -->
-    <color name="accent">#FB923C</color>
-    <color name="accent_dark">#F97316</color>
+    <color name="accent">#F97316</color>
+    <color name="accent_dark">#C2410C</color>
     <color name="accent_light">#FFEDD5</color>
 
     <!-- Semantic Colors -->
@@ -24,9 +24,9 @@
     <!-- Neutral Colors -->
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
-    <color name="gray_50">#F8FAFF</color>
-    <color name="gray_100">#EFF6FF</color>
-    <color name="gray_200">#E0E7FF</color>
+    <color name="gray_50">#F8FAFC</color>
+    <color name="gray_100">#F1F5F9</color>
+    <color name="gray_200">#E2E8F0</color>
     <color name="gray_300">#CBD5E1</color>
     <color name="gray_400">#94A3B8</color>
     <color name="gray_500">#64748B</color>
@@ -36,9 +36,9 @@
     <color name="gray_900">#0F172A</color>
 
     <!-- Background -->
-    <color name="background">#EFF6FF</color>
+    <color name="background">#F6F8FB</color>
     <color name="surface">#FFFFFF</color>
-    <color name="surface_variant">#E0E7FF</color>
+    <color name="surface_variant">#EEF6F5</color>
 
     <!-- Text -->
     <color name="text_primary">#0F172A</color>

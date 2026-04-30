@@ -7,6 +7,21 @@
     android:background="@color/background"
     android:padding="16dp">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:text="Trilha de aulas"
+        android:textAppearance="@style/TextAppearance.LGPD.ScreenTitle"
+        android:textSize="24sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Do básico à aplicação prática: conceitos, direitos, bases legais, segurança e rotinas acadêmicas."
+        android:textAppearance="@style/TextAppearance.LGPD.BodySmall" />
+
     <!-- Filtro por dificuldade -->
     <HorizontalScrollView
         android:layout_width="match_parent"

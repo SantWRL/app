@@ -1,5 +1,7 @@
 package br.ufpi.lgpd.educacional.ui.adapter
 
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -39,15 +41,14 @@ class LessonCardAdapter(
                 lessonDescription.text = lesson.description
                 lessonTime.text = "${lesson.estimatedTime} min"
                 
-                // Definir cor baseado em dificuldade
-                val difficultyColor = when (lesson.difficulty) {
-                    "BEGINNER" -> android.graphics.Color.parseColor("#10B981")
-                    "INTERMEDIATE" -> android.graphics.Color.parseColor("#F59E0B")
-                    "ADVANCED" -> android.graphics.Color.parseColor("#EF4444")
-                    else -> android.graphics.Color.parseColor("#6B7280")
+                val (difficultyLabel, difficultyColor) = when (lesson.difficulty) {
+                    "BEGINNER" -> "Iniciante" to Color.parseColor("#0F766E")
+                    "INTERMEDIATE" -> "Intermediário" to Color.parseColor("#D97706")
+                    "ADVANCED" -> "Avançado" to Color.parseColor("#DC2626")
+                    else -> lesson.difficulty to Color.parseColor("#64748B")
                 }
-                difficultyBadge.setBackgroundColor(difficultyColor)
-                difficultyBadge.text = lesson.difficulty
+                difficultyBadge.backgroundTintList = ColorStateList.valueOf(difficultyColor)
+                difficultyBadge.text = difficultyLabel
                 
                 root.setOnClickListener {
                     onLessonClick(lesson)

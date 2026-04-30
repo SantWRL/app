@@ -9,11 +9,13 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.ufpi.lgpd.educacional.R
 import br.ufpi.lgpd.educacional.databinding.FragmentHomeBinding
 import br.ufpi.lgpd.educacional.ui.adapter.LessonCardAdapter
 import br.ufpi.lgpd.educacional.ui.adapter.QuizCardAdapter
+import br.ufpi.lgpd.educacional.ui.quizzes.QuizDetailFragment
 import br.ufpi.lgpd.educacional.util.UserPreferences
 import kotlinx.coroutines.launch
 
@@ -62,8 +64,11 @@ class HomeFragment : Fragment() {
         }
 
         quizAdapter = QuizCardAdapter { quiz ->
-            // Navegar para quiz
             viewModel.selectQuiz(quiz)
+            val args = Bundle().apply {
+                putInt(QuizDetailFragment.ARG_QUIZ_ID, quiz.id)
+            }
+            findNavController().navigate(R.id.action_homeFragment_to_quizDetailFragment, args)
         }
 
         binding.lessonsRecyclerView.apply {

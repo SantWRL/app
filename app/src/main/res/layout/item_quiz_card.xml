@@ -54,7 +54,7 @@
             android:textAppearance="@style/TextAppearance.LGPD.Body"
             android:textSize="15sp"
             android:textStyle="bold"
-            android:text="Título do Quiz" />
+            android:text="Título do teste" />
 
         <TextView
             android:id="@+id/quizDescription"
@@ -66,7 +66,7 @@
             android:maxLines="3"
             android:textAppearance="@style/TextAppearance.LGPD.BodySmall"
             android:lineSpacingExtra="2dp"
-            android:text="Descrição do quiz" />
+            android:text="Descrição do teste" />
 
         <LinearLayout
             android:layout_width="match_parent"

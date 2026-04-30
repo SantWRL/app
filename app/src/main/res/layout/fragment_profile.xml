@@ -68,7 +68,7 @@
                     android:layout_marginBottom="18dp"
                     android:textAppearance="@style/TextAppearance.LGPD.BodySmall"
                     android:textAlignment="center"
-                    android:text="Nível 1" />
+                    android:text="Nível 1 - trilha LGPD" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -94,7 +94,7 @@
                     <ImageView
                         android:layout_width="26dp"
                         android:layout_height="26dp"
-                        android:contentDescription="estrela"
+                        android:contentDescription="@string/profile_achievements"
                         android:src="@drawable/ic_star"
                         app:tint="@color/accent" />
 
@@ -124,9 +124,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:text="Digite seu nome para personalizar sua experiência"
+                    android:text="Personalize seu perfil de aprendizagem"
                     android:textColor="@color/text_primary"
-                    android:textSize="14sp" />
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="Esse nome aparece na saudação e ajuda a acompanhar seu avanço na trilha LGPD."
+                    android:textAppearance="@style/TextAppearance.LGPD.BodySmall" />
 
                 <EditText
                     android:id="@+id/nameInput"
@@ -188,7 +196,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
-                        android:text="Lições"
+                        android:text="Aulas"
                         android:textColor="@color/text_secondary"
                         android:textSize="12sp" />
 
@@ -227,7 +235,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
-                        android:text="Quizzes"
+                        android:text="Testes"
                         android:textColor="@color/text_secondary"
                         android:textSize="12sp" />
 
@@ -285,9 +293,16 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="6dp"
                 android:textAppearance="@style/TextAppearance.LGPD.SectionTitle"
                 android:text="@string/profile_achievements" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Marcos que mostram sua evolução em privacidade, segurança e conformidade."
+                android:textAppearance="@style/TextAppearance.LGPD.BodySmall" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/achievementsRecyclerView"
@@ -304,7 +319,7 @@
             style="@style/Button.Secondary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sair da Conta" />
+            android:text="Limpar sessão" />
 
     </LinearLayout>
 

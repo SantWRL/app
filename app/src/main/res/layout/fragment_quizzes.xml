@@ -7,6 +7,21 @@
     android:background="@color/background"
     android:padding="16dp">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:text="Testes de fixação"
+        android:textAppearance="@style/TextAppearance.LGPD.ScreenTitle"
+        android:textSize="24sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Responda por tema para consolidar conceitos e reconhecer decisões corretas em situações reais."
+        android:textAppearance="@style/TextAppearance.LGPD.BodySmall" />
+
     <!-- Filtro por categoria -->
     <HorizontalScrollView
         android:layout_width="match_parent"

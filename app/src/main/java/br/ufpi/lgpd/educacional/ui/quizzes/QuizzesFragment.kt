@@ -9,7 +9,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import br.ufpi.lgpd.educacional.R
+import br.ufpi.lgpd.educacional.data.model.Quiz
 import br.ufpi.lgpd.educacional.databinding.FragmentQuizzesBinding
 import br.ufpi.lgpd.educacional.ui.adapter.QuizzesListAdapter
 import kotlinx.coroutines.launch
@@ -25,6 +28,7 @@ class QuizzesFragment : Fragment() {
     private val viewModel: QuizzesViewModel by viewModels()
 
     private lateinit var adapter: QuizzesListAdapter
+    private var allQuizzes: List<Quiz> = emptyList()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,6 +43,7 @@ class QuizzesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupRecyclerView()
+        setupFilters()
         observeData()
         viewModel.loadQuizzes()
     }
@@ -46,7 +51,10 @@ class QuizzesFragment : Fragment() {
     private fun setupRecyclerView() {
         adapter = QuizzesListAdapter { quiz ->
             viewModel.selectQuiz(quiz)
-            // Navegar para o quiz
+            val args = Bundle().apply {
+                putInt(QuizDetailFragment.ARG_QUIZ_ID, quiz.id)
+            }
+            findNavController().navigate(R.id.action_quizzesFragment_to_quizDetailFragment, args)
         }
 
         binding.quizzesRecyclerView.apply {
@@ -55,10 +63,22 @@ class QuizzesFragment : Fragment() {
         }
     }
 
+    private fun setupFilters() {
+        binding.filterAll.setOnClickListener { adapter.submitList(allQuizzes) }
+        binding.filterFundamentos.setOnClickListener { filterByCategory("Fundamentos") }
+        binding.filterDireitos.setOnClickListener { filterByCategory("Direitos") }
+        binding.filterSeguranca.setOnClickListener { filterByCategory("Segurança") }
+    }
+
+    private fun filterByCategory(category: String) {
+        adapter.submitList(allQuizzes.filter { it.category == category })
+    }
+
     private fun observeData() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.quizzes.collect { quizzes ->
+                    allQuizzes = quizzes
                     adapter.submitList(quizzes)
                 }
             }

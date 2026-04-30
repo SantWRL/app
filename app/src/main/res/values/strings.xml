@@ -1,66 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">LGPD Educacional</string>
-    
+
     <!-- Onboarding -->
     <string name="onboarding_welcome_title">Bem-vindo ao LGPD Educacional</string>
-    <string name="onboarding_welcome_subtitle">Aprenda sobre proteção de dados de forma interativa</string>
-    <string name="onboarding_privacy_title">Sua Privacidade</string>
-    <string name="onboarding_privacy_subtitle">Entenda seus direitos na era digital</string>
-    <string name="onboarding_rights_title">Seus Direitos</string>
-    <string name="onboarding_rights_subtitle">10 direitos fundamentais do titular de dados</string>
+    <string name="onboarding_welcome_subtitle">Aprenda proteção de dados com exemplos do dia a dia</string>
+    <string name="onboarding_privacy_title">Sua privacidade</string>
+    <string name="onboarding_privacy_subtitle">Entenda quando, por que e como seus dados podem ser usados</string>
+    <string name="onboarding_rights_title">Seus direitos</string>
+    <string name="onboarding_rights_subtitle">Conheça os principais direitos do titular de dados</string>
     <string name="onboarding_lgpd_title">O que é LGPD?</string>
-    <string name="onboarding_lgpd_subtitle">Lei Geral de Proteção de Dados - Lei nº 13.709/2018</string>
-    <string name="onboarding_data_title">Seus Dados</string>
-    <string name="onboarding_data_subtitle">Você tem controle sobre como suas informações são usadas</string>
-    <string name="onboarding_start_title">Vamos Começar!</string>
-    <string name="onboarding_start_subtitle">Explore lições, testes e cenários práticos sobre LGPD</string>
+    <string name="onboarding_lgpd_subtitle">Lei Geral de Proteção de Dados Pessoais - Lei nº 13.709/2018</string>
+    <string name="onboarding_data_title">Seus dados</string>
+    <string name="onboarding_data_subtitle">Você tem controle sobre como suas informações são tratadas</string>
+    <string name="onboarding_start_title">Vamos começar</string>
+    <string name="onboarding_start_subtitle">Explore aulas, testes e situações práticas sobre LGPD</string>
     <string name="onboarding_get_started">Começar</string>
-    
+
     <!-- Home -->
     <string name="home_title">Aprender</string>
     <string name="home_subtitle">Proteja seus dados pessoais</string>
     <string name="home_greeting">Olá, %1$s!</string>
-    <string name="home_summary">A LGPD protege seus dados pessoais e dá a você mais controle sobre como suas informações são usadas.</string>
-    <string name="home_lgpd_summary_title">O que é LGPD?</string>
-    <string name="home_lgpd_summary_text">A Lei Geral de Proteção de Dados garante direitos aos titulares e obriga empresas a tratar seus dados com responsabilidade.</string>
-    <string name="home_lessons">Lições</string>
+    <string name="home_summary">Aprenda LGPD de forma prática: direitos, bases legais, segurança, dados sensíveis e cuidados no ambiente acadêmico.</string>
+    <string name="home_lgpd_summary_title">LGPD em poucas palavras</string>
+    <string name="home_lgpd_summary_text">A LGPD protege direitos fundamentais de liberdade, privacidade e desenvolvimento da personalidade. Ela regula o tratamento de dados pessoais em meios físicos e digitais, por organizações públicas ou privadas.</string>
+    <string name="home_quick_guide_title">O que você vai dominar</string>
+    <string name="home_quick_guide_text">Identificar dados pessoais e sensíveis; reconhecer bases legais; exercer direitos do titular; entender papéis de controlador, operador e encarregado; aplicar boas práticas de segurança e prevenção de incidentes.</string>
+    <string name="home_lessons">Aulas</string>
     <string name="home_quizzes">Testes</string>
     <string name="home_scenarios">Cenários</string>
-    <string name="home_progress">Seu Progresso</string>
-    
+    <string name="home_progress">Seu progresso</string>
+
     <!-- Lessons -->
     <string name="lesson_lgpd_intro">Introdução à LGPD</string>
-    <string name="lesson_principles">Princípios Fundamentais</string>
-    <string name="lesson_rights">Direitos dos Titulares</string>
+    <string name="lesson_principles">Princípios fundamentais</string>
+    <string name="lesson_rights">Direitos dos titulares</string>
     <string name="lesson_actors">Atores da LGPD</string>
-    <string name="lesson_security">Segurança de Dados</string>
-    <string name="lesson_academic">LGPD no Contexto Acadêmico</string>
-    
+    <string name="lesson_security">Segurança de dados</string>
+    <string name="lesson_academic">LGPD no contexto acadêmico</string>
+
     <!-- Principles -->
     <string name="principle_purpose">Finalidade</string>
     <string name="principle_adequacy">Adequação</string>
     <string name="principle_necessity">Necessidade</string>
     <string name="principle_transparency">Transparência</string>
     <string name="principle_security">Segurança</string>
-    <string name="principle_accountability">Prestação de Contas</string>
-    <string name="principle_access">Livre Acesso</string>
-    <string name="principle_quality">Qualidade dos Dados</string>
-    <string name="principle_non_discrimination">Não Discriminação</string>
+    <string name="principle_accountability">Prestação de contas</string>
+    <string name="principle_access">Livre acesso</string>
+    <string name="principle_quality">Qualidade dos dados</string>
+    <string name="principle_non_discrimination">Não discriminação</string>
     <string name="principle_prevention">Prevenção</string>
-    
+
     <!-- Rights -->
-    <string name="right_confirmation">Confirmação de Existência</string>
-    <string name="right_access">Acesso aos Dados</string>
-    <string name="right_correction">Correção de Dados</string>
+    <string name="right_confirmation">Confirmação de existência</string>
+    <string name="right_access">Acesso aos dados</string>
+    <string name="right_correction">Correção de dados</string>
     <string name="right_anonymization">Anonimização</string>
-    <string name="right_blocking">Bloqueio ou Eliminação</string>
+    <string name="right_blocking">Bloqueio ou eliminação</string>
     <string name="right_portability">Portabilidade</string>
     <string name="right_deletion">Eliminação</string>
-    <string name="right_information">Informação sobre Compartilhamento</string>
-    <string name="right_no_consent">Recusa de Consentimento</string>
-    <string name="right_revocation">Revogação de Consentimento</string>
-    
+    <string name="right_information">Informação sobre compartilhamento</string>
+    <string name="right_no_consent">Recusa de consentimento</string>
+    <string name="right_revocation">Revogação de consentimento</string>
+
     <!-- Quiz -->
     <string name="quiz_question">Pergunta %1$d de %2$d</string>
     <string name="quiz_your_answer">Sua resposta:</string>
@@ -68,36 +70,36 @@
     <string name="quiz_incorrect">Incorreto</string>
     <string name="quiz_next">Próxima</string>
     <string name="quiz_finish">Finalizar</string>
-    <string name="quiz_results">Seus Resultados</string>
+    <string name="quiz_results">Seus resultados</string>
     <string name="quiz_score">Pontuação: %1$d%%</string>
-    
+
     <!-- Scenarios -->
-    <string name="scenario_title">Cenários Reais</string>
+    <string name="scenario_title">Cenários reais</string>
     <string name="scenario_subtitle">Teste seus conhecimentos em situações do dia a dia</string>
     <string name="scenario_decision">Qual é a ação correta?</string>
-    
+
     <!-- Profile -->
-    <string name="profile_title">Seu Perfil</string>
+    <string name="profile_title">Seu perfil</string>
     <string name="profile_level">Nível</string>
     <string name="profile_points">Pontos</string>
-    <string name="profile_lessons_completed">Lições Concluídas</string>
-    <string name="profile_quizzes_completed">Testes Concluídos</string>
+    <string name="profile_lessons_completed">Aulas concluídas</string>
+    <string name="profile_quizzes_completed">Testes concluídos</string>
     <string name="profile_achievements">Conquistas</string>
     <string name="profile_name_hint">Digite seu nome</string>
     <string name="profile_save_name">Salvar nome</string>
     <string name="profile_saved_name">Nome salvo com sucesso</string>
-    
+
     <!-- Buttons -->
     <string name="button_continue">Continuar</string>
     <string name="button_start">Iniciar</string>
     <string name="button_back">Voltar</string>
     <string name="button_submit">Enviar</string>
-    <string name="button_retry">Tentar Novamente</string>
-    <string name="button_home">Voltar para Home</string>
-    
+    <string name="button_retry">Tentar novamente</string>
+    <string name="button_home">Voltar para início</string>
+
     <!-- Messages -->
     <string name="message_loading">Carregando...</string>
-    <string name="message_no_connection">Sem conexão de internet</string>
+    <string name="message_no_connection">Sem conexão com a internet</string>
     <string name="message_error">Ocorreu um erro</string>
     <string name="message_success">Sucesso!</string>
 </resources>

@@ -9,8 +9,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.recyclerview.widget.LinearLayoutManager
 import br.ufpi.lgpd.educacional.R
 import br.ufpi.lgpd.educacional.databinding.FragmentProfileBinding
+import br.ufpi.lgpd.educacional.ui.adapter.AchievementAdapter
 import br.ufpi.lgpd.educacional.util.UserPreferences
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
@@ -25,6 +27,7 @@ class ProfileFragment : Fragment() {
 
     private val viewModel: ProfileViewModel by viewModels()
     private lateinit var userPreferences: UserPreferences
+    private lateinit var achievementAdapter: AchievementAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,9 +42,18 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         userPreferences = UserPreferences(requireContext())
+        setupAchievements()
         setupProfileEditor()
         observeData()
-        viewModel.loadUserProfile(userPreferences.userName)
+        loadProfile()
+    }
+
+    private fun setupAchievements() {
+        achievementAdapter = AchievementAdapter()
+        binding.achievementsRecyclerView.apply {
+            adapter = achievementAdapter
+            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        }
     }
 
     private fun setupProfileEditor() {
@@ -50,7 +62,7 @@ class ProfileFragment : Fragment() {
             val typedName = binding.nameInput.text?.toString().orEmpty().trim()
             if (typedName.isNotBlank()) {
                 userPreferences.userName = typedName
-                viewModel.updateProfile(viewModel.userProfile.value.copy(name = typedName))
+                loadProfile()
                 Snackbar.make(binding.root, getString(R.string.profile_saved_name), Snackbar.LENGTH_SHORT).show()
             } else {
                 binding.nameInput.error = getString(R.string.profile_name_hint)
@@ -66,15 +78,31 @@ class ProfileFragment : Fragment() {
                 }
             }
         }
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.achievements.collect { achievements ->
+                    achievementAdapter.submitList(achievements)
+                }
+            }
+        }
+    }
+
+    private fun loadProfile() {
+        viewModel.loadUserProfile(
+            savedName = userPreferences.userName,
+            quizzesCompleted = userPreferences.quizzesCompleted,
+            averageScore = userPreferences.averageQuizScore,
+            totalPoints = userPreferences.totalPoints
+        )
     }
 
     private fun updateUI(profile: UserProfile) {
         binding.apply {
             userName.text = profile.name
-            userLevel.text = "Nível ${profile.level}"
+            userLevel.text = "Nível ${profile.level} - trilha LGPD"
             userPoints.text = "${profile.totalPoints} pontos"
-            lessonsCompleted.text = "${profile.lessonsCompleted} concluídas"
-            quizzesCompleted.text = "${profile.quizzesCompleted} resolvidos"
+            lessonsCompleted.text = profile.lessonsCompleted.toString()
+            quizzesCompleted.text = profile.quizzesCompleted.toString()
             averageScore.text = "%.1f%%".format(profile.averageScore)
             avatarInitials.text = getInitials(profile.name)
             if (nameInput.text.isNullOrBlank()) {
@@ -95,6 +123,13 @@ class ProfileFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (::userPreferences.isInitialized) {
+            loadProfile()
+        }
     }
 }
 

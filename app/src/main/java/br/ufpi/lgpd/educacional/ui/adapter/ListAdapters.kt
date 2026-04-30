@@ -1,6 +1,9 @@
 package br.ufpi.lgpd.educacional.ui.adapter
 
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -42,19 +45,17 @@ class LessonsListAdapter(
                 lessonDescription.text = lesson.description
                 lessonTime.text = "${lesson.estimatedTime} min"
                 
-                val difficultyColor = when (lesson.difficulty) {
-                    "BEGINNER" -> android.graphics.Color.parseColor("#10B981")
-                    "INTERMEDIATE" -> android.graphics.Color.parseColor("#F59E0B")
-                    "ADVANCED" -> android.graphics.Color.parseColor("#EF4444")
-                    else -> android.graphics.Color.parseColor("#6B7280")
+                val (difficultyLabel, difficultyColor) = when (lesson.difficulty) {
+                    "BEGINNER" -> "Iniciante" to Color.parseColor("#0F766E")
+                    "INTERMEDIATE" -> "Intermediário" to Color.parseColor("#D97706")
+                    "ADVANCED" -> "Avançado" to Color.parseColor("#DC2626")
+                    else -> lesson.difficulty to Color.parseColor("#64748B")
                 }
-                difficultyBadge.setBackgroundColor(difficultyColor)
-                difficultyBadge.text = lesson.difficulty
+                difficultyBadge.backgroundTintList = ColorStateList.valueOf(difficultyColor)
+                difficultyBadge.text = difficultyLabel
                 
                 // Mostrar status de conclusão
-                if (lesson.isCompleted) {
-                    completedIcon.setImageResource(android.R.drawable.ic_dialog_info)
-                }
+                completedIcon.visibility = if (lesson.isCompleted) View.VISIBLE else View.GONE
                 
                 root.setOnClickListener {
                     onLessonClick(lesson)
@@ -100,14 +101,14 @@ class QuizzesListAdapter(
                 quizQuestions.text = "${quiz.totalQuestions} perguntas"
                 quizCategory.text = quiz.category
                 
-                val difficultyColor = when (quiz.difficulty) {
-                    "BEGINNER" -> android.graphics.Color.parseColor("#10B981")
-                    "INTERMEDIATE" -> android.graphics.Color.parseColor("#F59E0B")
-                    "ADVANCED" -> android.graphics.Color.parseColor("#EF4444")
-                    else -> android.graphics.Color.parseColor("#6B7280")
+                val (difficultyLabel, difficultyColor) = when (quiz.difficulty) {
+                    "BEGINNER" -> "Iniciante" to Color.parseColor("#0F766E")
+                    "INTERMEDIATE" -> "Intermediário" to Color.parseColor("#D97706")
+                    "ADVANCED" -> "Avançado" to Color.parseColor("#DC2626")
+                    else -> quiz.difficulty to Color.parseColor("#64748B")
                 }
-                difficultyBadge.setBackgroundColor(difficultyColor)
-                difficultyBadge.text = quiz.difficulty
+                difficultyBadge.backgroundTintList = ColorStateList.valueOf(difficultyColor)
+                difficultyBadge.text = difficultyLabel
                 
                 root.setOnClickListener {
                     onQuizClick(quiz)

@@ -10,6 +10,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
+import br.ufpi.lgpd.educacional.data.model.Lesson
 import br.ufpi.lgpd.educacional.databinding.FragmentLessonsBinding
 import br.ufpi.lgpd.educacional.ui.adapter.LessonsListAdapter
 import kotlinx.coroutines.launch
@@ -25,6 +26,7 @@ class LessonsFragment : Fragment() {
     private val viewModel: LessonsViewModel by viewModels()
 
     private lateinit var adapter: LessonsListAdapter
+    private var allLessons: List<Lesson> = emptyList()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,6 +41,7 @@ class LessonsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupRecyclerView()
+        setupFilters()
         observeData()
         viewModel.loadLessons()
     }
@@ -55,10 +58,22 @@ class LessonsFragment : Fragment() {
         }
     }
 
+    private fun setupFilters() {
+        binding.filterAll.setOnClickListener { adapter.submitList(allLessons) }
+        binding.filterBeginner.setOnClickListener { filterByDifficulty("BEGINNER") }
+        binding.filterIntermediate.setOnClickListener { filterByDifficulty("INTERMEDIATE") }
+        binding.filterAdvanced.setOnClickListener { filterByDifficulty("ADVANCED") }
+    }
+
+    private fun filterByDifficulty(difficulty: String) {
+        adapter.submitList(allLessons.filter { it.difficulty == difficulty })
+    }
+
     private fun observeData() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.lessons.collect { lessons ->
+                    allLessons = lessons
                     adapter.submitList(lessons)
                 }
             }

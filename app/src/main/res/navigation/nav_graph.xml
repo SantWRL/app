@@ -7,7 +7,11 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="br.ufpi.lgpd.educacional.ui.home.HomeFragment"
-        android:label="Home" />
+        android:label="Home">
+        <action
+            android:id="@+id/action_homeFragment_to_quizDetailFragment"
+            app:destination="@id/quizDetailFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/lessonsFragment"
@@ -17,7 +21,20 @@
     <fragment
         android:id="@+id/quizzesFragment"
         android:name="br.ufpi.lgpd.educacional.ui.quizzes.QuizzesFragment"
-        android:label="Testes" />
+        android:label="Testes">
+        <action
+            android:id="@+id/action_quizzesFragment_to_quizDetailFragment"
+            app:destination="@id/quizDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/quizDetailFragment"
+        android:name="br.ufpi.lgpd.educacional.ui.quizzes.QuizDetailFragment"
+        android:label="Responder teste">
+        <argument
+            android:name="quizId"
+            app:argType="integer" />
+    </fragment>
 
     <fragment
         android:id="@+id/profileFragment"

@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="18dp"
             android:textAppearance="@style/TextAppearance.LGPD.Body"
-            android:text="Aprenda sobre seus direitos na proteção de dados e veja como a LGPD faz parte do seu dia a dia." />
+            android:text="@string/home_summary" />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
@@ -187,11 +187,44 @@
 
         </com.google.android.material.card.MaterialCardView>
 
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="@color/surface_variant"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/secondary_light"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_card">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/home_quick_guide_title"
+                    android:textAppearance="@style/TextAppearance.LGPD.SectionTitle" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_quick_guide_text"
+                    android:textAppearance="@style/TextAppearance.LGPD.BodySmall" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:letterSpacing="0.02"
+            android:letterSpacing="0"
             android:text="@string/home_lessons"
             android:textColor="@color/text_primary"
             android:textSize="18sp"
@@ -211,7 +244,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:letterSpacing="0.02"
+            android:letterSpacing="0"
             android:text="@string/home_quizzes"
             android:textColor="@color/text_primary"
             android:textSize="18sp"

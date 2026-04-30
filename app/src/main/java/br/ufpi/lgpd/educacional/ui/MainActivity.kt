@@ -2,6 +2,7 @@ package br.ufpi.lgpd.educacional.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -55,7 +56,13 @@ class MainActivity : AppCompatActivity() {
                 R.id.lessonsFragment -> getString(R.string.home_lessons)
                 R.id.quizzesFragment -> getString(R.string.home_quizzes)
                 R.id.profileFragment -> getString(R.string.profile_title)
+                R.id.quizDetailFragment -> getString(R.string.quiz_results)
                 else -> getString(R.string.home_title)
+            }
+            binding.bottomNavigation.visibility = if (destination.id == R.id.quizDetailFragment) {
+                View.GONE
+            } else {
+                View.VISIBLE
             }
         }
     }

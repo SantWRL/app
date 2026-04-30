@@ -3,9 +3,9 @@
     <dimen name="padding_screen">24dp</dimen>
     <dimen name="padding_card">20dp</dimen>
     <dimen name="padding_screen_horizontal">24dp</dimen>
-    <dimen name="card_corner_radius">18dp</dimen>
-    <dimen name="card_corner_radius_small">14dp</dimen>
-    <dimen name="card_elevation">4dp</dimen>
-    <dimen name="toolbar_elevation">6dp</dimen>
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="card_corner_radius_small">6dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="toolbar_elevation">3dp</dimen>
     <dimen name="bottom_nav_height">68dp</dimen>
 </resources>
