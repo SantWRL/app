@@ -15,11 +15,24 @@
     <color name="accent_dark">#C2410C</color>
     <color name="accent_light">#FFEDD5</color>
 
+    <!-- Duolingo Inspired Palette -->
+    <color name="duo_green">#58CC02</color>
+    <color name="duo_green_dark">#46A302</color>
+    <color name="duo_blue">#1CB0F6</color>
+    <color name="duo_blue_dark">#1899D6</color>
+    <color name="duo_yellow">#FFC800</color>
+    <color name="duo_yellow_dark">#E5A400</color>
+    <color name="duo_red">#FF4B4B</color>
+    <color name="duo_red_dark">#D33131</color>
+    <color name="duo_gray">#AFAFAF</color>
+    <color name="duo_gray_dark">#828282</color>
+
     <!-- Semantic Colors -->
-    <color name="success">#22C55E</color>
-    <color name="error">#EF4444</color>
-    <color name="warning">#F59E0B</color>
-    <color name="info">#0EA5E9</color>
+    <color name="success">#58CC02</color>
+    <color name="success_light">#E5F9D1</color>
+    <color name="error">#FF4B4B</color>
+    <color name="warning">#FFC800</color>
+    <color name="info">#1CB0F6</color>
 
     <!-- Neutral Colors -->
     <color name="white">#FFFFFF</color>

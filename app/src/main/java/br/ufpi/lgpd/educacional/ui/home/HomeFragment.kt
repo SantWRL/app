@@ -1,5 +1,7 @@
 package br.ufpi.lgpd.educacional.ui.home
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +17,7 @@ import br.ufpi.lgpd.educacional.R
 import br.ufpi.lgpd.educacional.databinding.FragmentHomeBinding
 import br.ufpi.lgpd.educacional.ui.adapter.LessonCardAdapter
 import br.ufpi.lgpd.educacional.ui.adapter.QuizCardAdapter
+import br.ufpi.lgpd.educacional.ui.lessons.LessonDetailFragment
 import br.ufpi.lgpd.educacional.ui.quizzes.QuizDetailFragment
 import br.ufpi.lgpd.educacional.util.UserPreferences
 import kotlinx.coroutines.launch
@@ -47,9 +50,22 @@ class HomeFragment : Fragment() {
 
         userPreferences = UserPreferences(requireContext())
         setupRecyclerViews()
+        setupGovLink()
         observeData()
         loadContent()
         updateGreeting()
+    }
+
+    private fun setupGovLink() {
+        binding.btnGovLink.setOnClickListener {
+            val url = "https://www.gov.br/anpd/pt-br"
+            try {
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                startActivity(intent)
+            } catch (e: Exception) {
+                android.widget.Toast.makeText(requireContext(), "Não foi possível abrir o navegador.", android.widget.Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     private fun updateGreeting() {
@@ -59,8 +75,11 @@ class HomeFragment : Fragment() {
 
     private fun setupRecyclerViews() {
         lessonAdapter = LessonCardAdapter { lesson ->
-            // Navegar para detalhe da lição
             viewModel.selectLesson(lesson)
+            val args = Bundle().apply {
+                putInt(LessonDetailFragment.ARG_LESSON_ID, lesson.id)
+            }
+            findNavController().navigate(R.id.action_homeFragment_to_lessonDetailFragment, args)
         }
 
         quizAdapter = QuizCardAdapter { quiz ->
@@ -128,6 +147,7 @@ class HomeFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         updateGreeting()
+        viewModel.loadUserProgress()
     }
 
     override fun onDestroyView() {

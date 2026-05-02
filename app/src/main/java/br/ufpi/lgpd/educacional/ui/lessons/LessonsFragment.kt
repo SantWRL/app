@@ -9,7 +9,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import br.ufpi.lgpd.educacional.R
 import br.ufpi.lgpd.educacional.data.model.Lesson
 import br.ufpi.lgpd.educacional.databinding.FragmentLessonsBinding
 import br.ufpi.lgpd.educacional.ui.adapter.LessonsListAdapter
@@ -49,7 +51,10 @@ class LessonsFragment : Fragment() {
     private fun setupRecyclerView() {
         adapter = LessonsListAdapter { lesson ->
             viewModel.selectLesson(lesson)
-            // Navegar para detalhes da lição
+            val args = Bundle().apply {
+                putInt(LessonDetailFragment.ARG_LESSON_ID, lesson.id)
+            }
+            findNavController().navigate(R.id.action_lessonsFragment_to_lessonDetailFragment, args)
         }
 
         binding.lessonsRecyclerView.apply {

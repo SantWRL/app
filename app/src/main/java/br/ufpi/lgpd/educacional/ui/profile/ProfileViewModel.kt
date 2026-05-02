@@ -1,7 +1,12 @@
 package br.ufpi.lgpd.educacional.ui.profile
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import br.ufpi.lgpd.educacional.data.database.AppDatabase
+import br.ufpi.lgpd.educacional.data.model.User
+import br.ufpi.lgpd.educacional.data.repository.UserRepository
+import br.ufpi.lgpd.educacional.util.UserPreferences
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -9,12 +14,20 @@ import kotlinx.coroutines.launch
 
 /**
  * ViewModel para o perfil do usuário.
+ * Combina dados do Room (via UserRepository) com SharedPreferences legadas.
  */
-class ProfileViewModel : ViewModel() {
+class ProfileViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val _userProfile = MutableStateFlow(
-        UserProfile("Usuário", "", 1, 0, 0, 0, 0.0)
-    )
+    private val repository: UserRepository by lazy {
+        val db = AppDatabase.getInstance(application)
+        UserRepository(db.userDao())
+    }
+
+    private val prefs: UserPreferences by lazy {
+        UserPreferences(application)
+    }
+
+    private val _userProfile = MutableStateFlow(buildDefaultProfile())
     val userProfile: StateFlow<UserProfile> = _userProfile.asStateFlow()
 
     private val _achievements = MutableStateFlow<List<AchievementItem>>(emptyList())
@@ -23,54 +36,186 @@ class ProfileViewModel : ViewModel() {
     private val _isLoading = MutableStateFlow(false)
     val isLoading: StateFlow<Boolean> = _isLoading.asStateFlow()
 
-    fun loadUserProfile(
-        savedName: String = "João Silva",
-        quizzesCompleted: Int = 0,
-        averageScore: Double = 0.0,
-        totalPoints: Int = 0
-    ) {
+    // ─── Cores disponíveis para avatar ────────────────────────────────────────
+
+    val avatarColors = listOf(
+        "#2563EB", // Azul (padrão)
+        "#0F766E", // Verde-azulado
+        "#7C3AED", // Roxo
+        "#DB2777", // Rosa
+        "#D97706", // Âmbar
+        "#059669"  // Verde
+    )
+
+    // ─── Inicialização ────────────────────────────────────────────────────────
+
+    init {
+        viewModelScope.launch {
+            repository.ensureUserExists()
+            repository.updateStreak()
+            loadFromDatabase()
+        }
+    }
+
+    // ─── Carregamento ─────────────────────────────────────────────────────────
+
+    fun loadFromDatabase() {
         viewModelScope.launch {
             _isLoading.value = true
             try {
-                _userProfile.value = UserProfile(
-                    name = savedName.ifBlank { "João Silva" },
-                    email = "aluno@ufpi.br",
-                    level = calculateLevel(totalPoints),
-                    totalPoints = totalPoints,
-                    lessonsCompleted = 3,
-                    quizzesCompleted = quizzesCompleted,
-                    averageScore = averageScore
-                )
-                _achievements.value = listOf(
-                    AchievementItem("Primeiro passo", "Concluiu a introdução à LGPD.", true),
-                    AchievementItem("Guardião dos dados", "Aprendeu a identificar dados pessoais e sensíveis.", true),
-                    AchievementItem("Titular consciente", "Revisou os principais direitos previstos na LGPD.", true),
-                    AchievementItem("Rumo à conformidade", "Complete a aula de bases legais para desbloquear.", false),
-                    AchievementItem("Resposta a incidentes", "Conclua segurança e incidentes para desbloquear.", false)
-                )
+                val user = repository.getUser() ?: User()
+
+                // Sincroniza prefs legadas → Room (apenas se Room ainda vazio)
+                if (user.name == "Usuário" && prefs.userName != "Usuário") {
+                    repository.updateUserName(prefs.userName)
+                }
+                if (user.bio.isBlank() && prefs.userBio.isNotBlank()) {
+                    repository.updateUserBio(prefs.userBio)
+                }
+
+                val freshUser = repository.getUser() ?: user
+                _userProfile.value = freshUser.toProfile(avatarColors)
+                _achievements.value = buildAchievements(freshUser)
             } finally {
                 _isLoading.value = false
             }
         }
     }
 
-    fun updateProfile(profile: UserProfile) {
-        _userProfile.value = profile
-    }
-
-    private fun calculateLevel(totalPoints: Int): Int {
-        return when {
-            totalPoints >= 1500 -> 5
-            totalPoints >= 1000 -> 4
-            totalPoints >= 500 -> 3
-            totalPoints >= 150 -> 2
-            else -> 1
+    // Compatibilidade com chamadas legadas do HomeFragment/ProfileFragment
+    fun loadUserProfile(
+        savedName: String = "Usuário",
+        quizzesCompleted: Int = 0,
+        averageScore: Double = 0.0,
+        totalPoints: Int = 0
+    ) {
+        viewModelScope.launch {
+            val user = repository.getUser() ?: User()
+            _userProfile.value = user.toProfile(avatarColors)
+            _achievements.value = buildAchievements(user)
         }
     }
+
+    // ─── Edição de perfil ─────────────────────────────────────────────────────
+
+    fun saveName(name: String) {
+        viewModelScope.launch {
+            prefs.userName = name
+            repository.updateUserName(name)
+            loadFromDatabase()
+        }
+    }
+
+    fun saveBio(bio: String) {
+        viewModelScope.launch {
+            prefs.userBio = bio
+            repository.updateUserBio(bio)
+            loadFromDatabase()
+        }
+    }
+
+    fun saveProfileType(type: String) {
+        viewModelScope.launch {
+            prefs.profileType = type
+            repository.updateProfileType(type)
+            loadFromDatabase()
+        }
+    }
+
+    fun saveAvatarColor(index: Int) {
+        viewModelScope.launch {
+            prefs.avatarColorIndex = index
+            repository.updateAvatarColor(index)
+            loadFromDatabase()
+        }
+    }
+
+    fun clearSession() {
+        viewModelScope.launch {
+            val db = AppDatabase.getInstance(getApplication())
+            db.clearAllTables()
+            prefs.clearAll() // Limpa também as preferências criptografadas
+            _userProfile.value = buildDefaultProfile()
+            _achievements.value = emptyList()
+        }
+    }
+
+    // ─── Auxiliares ───────────────────────────────────────────────────────────
+
+    private fun User.toProfile(colors: List<String>): UserProfile = UserProfile(
+        name = name,
+        email = email,
+        bio = bio,
+        profileType = profileType,
+        level = level,
+        totalPoints = totalPoints,
+        lessonsCompleted = lessonsCompleted,
+        quizzesCompleted = quizzesCompleted,
+        averageScore = averageScore,
+        streakDays = streakDays,
+        avatarColor = colors.getOrElse(avatarColorIndex) { colors.first() },
+        avatarColorIndex = avatarColorIndex
+    )
+
+    private fun buildDefaultProfile() = UserProfile(
+        name = "Usuário", email = "", bio = "",
+        profileType = "student", level = 1, totalPoints = 0,
+        lessonsCompleted = 0, quizzesCompleted = 0, averageScore = 0.0,
+        streakDays = 0, avatarColor = "#2563EB", avatarColorIndex = 0
+    )
+
+    private fun buildAchievements(user: User): List<AchievementItem> {
+        return listOf(
+            AchievementItem(
+                "Primeiro passo", "Concluiu a introdução à LGPD.",
+                user.lessonsCompleted >= 1, "🎯"
+            ),
+            AchievementItem(
+                "Guardião dos dados", "Aprendeu a identificar dados pessoais e sensíveis.",
+                user.lessonsCompleted >= 2, "🛡️"
+            ),
+            AchievementItem(
+                "Titular consciente", "Revisou os principais direitos previstos na LGPD.",
+                user.lessonsCompleted >= 3, "⚖️"
+            ),
+            AchievementItem(
+                "Rumo à conformidade", "Complete a aula de bases legais para desbloquear.",
+                user.lessonsCompleted >= 4, "📋"
+            ),
+            AchievementItem(
+                "Resposta a incidentes", "Conclua segurança e incidentes para desbloquear.",
+                user.lessonsCompleted >= 7, "🚨"
+            ),
+            AchievementItem(
+                "Mestre LGPD", "Complete todas as 10 aulas.",
+                user.lessonsCompleted >= 10, "🏆"
+            ),
+            AchievementItem(
+                "Streak de 7 dias", "Estude por 7 dias seguidos.",
+                user.streakDays >= 7, "🔥"
+            )
+        )
+    }
 }
+
+data class UserProfile(
+    val name: String,
+    val email: String,
+    val bio: String,
+    val profileType: String,   // student | teacher | technician
+    val level: Int,
+    val totalPoints: Int,
+    val lessonsCompleted: Int,
+    val quizzesCompleted: Int,
+    val averageScore: Double,
+    val streakDays: Int,
+    val avatarColor: String,
+    val avatarColorIndex: Int
+)
 
 data class AchievementItem(
     val title: String,
     val description: String,
-    val isUnlocked: Boolean
+    val isUnlocked: Boolean,
+    val emoji: String = "⭐"
 )
