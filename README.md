@@ -4,8 +4,7 @@
 
 **LGPD Educacional** é um aplicativo mobile educacional de alta performance desenvolvido para Android, com o objetivo de capacitar cidadãos sobre a **Lei Geral de Proteção de Dados (LGPD)**. 
 
-Diferente de apps convencionais, este projeto utiliza **gamificação no estilo Duolingo** para transformar o aprendizado jurídico em uma experiência interativa, lúdica e visualmente rica. O projeto é fruto de um Trabalho de Conclusão de Curso (TCC) na UFPI, unindo rigor acadêmico com as melhores práticas de desenvolvimento mobile moderno.
-
+Diferente de apps convencionais, utilizei uma abordagem mais simples para transformar o aprendizado jurídico em uma experiência interativa, lúdica e visualmente rica. O projeto é fruto de um Trabalho de Conclusão de Curso (TCC) na UFPI, unindo rigor acadêmico com as melhores práticas de desenvolvimento mobile moderno.
 ---
 
 ## 🎨 Design e Experiência (Style: Duolingo-Inspired)
@@ -90,9 +89,9 @@ app/src/main/java/br/ufpi/lgpd/educacional/
 - **Instituição**: Universidade Federal do Piauí (UFPI) - Campus Picos
 
 ---
-
 ## 📄 Licença
 
-Este projeto é licenciado sob a **MIT License**.
+Este projeto é de autoria de Patrick Do Nascimento Santos.
 
-**Status do Projeto**: ✅ Estável / Versão 2.3 - "Duo Transformation"
+
+**Status do Projeto**: Em desenvolvimento........
