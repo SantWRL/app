@@ -94,9 +94,7 @@ app/src/main/java/br/ufpi/lgpd/educacional/
 
 Este projeto é de autoria de Patrick Do Nascimento Santos.
 
-<<<<<<< HEAD
-**Status do Projeto**: Em desenvolvimento...
-=======
 
-**Status do Projeto**: Em desenvolvimento........
->>>>>>> b38714cc23cbb9d90aef62b7bc26ef67db9bcf1f
+**Status do Projeto**: Em desenvolvimento...
+
+
