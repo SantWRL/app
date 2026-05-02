@@ -5,10 +5,7 @@
 **LGPD Educacional** é um aplicativo mobile educacional de alta performance desenvolvido para Android, com o objetivo de capacitar cidadãos sobre a **Lei Geral de Proteção de Dados (LGPD)**. 
 
 Diferente de apps convencionais, utilizei uma abordagem mais simples para transformar o aprendizado jurídico em uma experiência interativa, lúdica e visualmente rica. O projeto é fruto de um Trabalho de Conclusão de Curso (TCC) na UFPI, unindo rigor acadêmico com as melhores práticas de desenvolvimento mobile moderno.
-<<<<<<< HEAD
 
-=======
->>>>>>> b38714cc23cbb9d90aef62b7bc26ef67db9bcf1f
 ---
 
 ## 🎨 Design e Experiência (Style: Duolingo-Inspired)
